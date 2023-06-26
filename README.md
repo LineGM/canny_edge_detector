@@ -13,9 +13,6 @@ The process of Canny edge detection algorithm can be broken down to five differe
 # Gaussian filter
 Since all edge detection results are easily affected by the noise in the image, it is essential to filter out the noise to prevent false detection caused by it. To smooth the image, a Gaussian filter kernel is convolved with the image. This step will slightly smooth the image to reduce the effects of obvious noise on the edge detector. The equation for a Gaussian filter kernel of size (2k+1)×(2k+1) is given by:
 
-![image](https://github.com/LineGM/canny_edge_detector/assets/28562738/29a306ba-e1a2-4d54-9047-bbcc1494750b)
-
-
 ![image](https://github.com/LineGM/canny_edge_detector/assets/28562738/24a21915-7e47-4418-adaf-3c296da00278)
 
 Here is an example of a 5×5 Gaussian filter, used to create the adjacent image, with sigma  = 1. (The asterisk denotes a convolution operation.)
@@ -24,6 +21,8 @@ Here is an example of a 5×5 Gaussian filter, used to create the adjacent image,
 
 # Finding the intensity gradient of the image
 An edge in an image may point in a variety of directions, so the Canny algorithm uses four filters to detect horizontal, vertical and diagonal edges in the blurred image. The edge detection operator (such as Roberts, Prewitt, or Sobel) returns a value for the first derivative in the horizontal direction (Gx) and the vertical direction (Gy). From this the edge gradient and direction can be determined:
+
+![image](https://github.com/LineGM/canny_edge_detector/assets/28562738/41e3ff8e-adc7-4bf5-9a4c-5b08d7e33845)
 
 ![image](https://github.com/LineGM/canny_edge_detector/assets/28562738/9cb980df-36c5-4ec8-bfab-90f6ca0c843f)
 
